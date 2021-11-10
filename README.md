@@ -10,7 +10,7 @@ The following machines live on the network:
 |----------|------------|
 | Kali    |  192.168.1.90  |
 | Target    | 192.168.1.105   |
-|ELK | Server   | 192.168.1.100   |
+|ELK | 192.168.1.100   |
 
 
 # Red Team: What were the three most critical vulnerabilities discovered?
