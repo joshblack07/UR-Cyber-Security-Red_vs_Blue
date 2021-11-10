@@ -36,7 +36,7 @@ How many requests were made to this directory? At what time and from which IP ad
   - 15,987 HTTP requests to http://192.168.1.105/company_folders/secrets_folder
   - 11/09/2021  16:00-19:00 PM
   - Source IP: 192.168.1.1
-  - 
+
 Which files were requested? What information did they contain?
 
   - The file within the secrets-folder is connect_to_corp_server.  
