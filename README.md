@@ -50,13 +50,19 @@ A considerable amount of data is available in the logs. Specifically, evidence o
 | 207    | 12   |
 |404  | 6  |
 
-11/09/2021  16:00-19:00 PM
+Time: 11/09/2021  16:00-19:00 PM
 
 In addition, note the connection spike in the Connections over time [Packetbeat Flows] ECS, as well as the spike in errors in the Errors vs successful transactions [Packetbet] ECS
 
+**SCREENSHOT**
+
 **Access to Sensitive Data in secret_folder**: On the dashboard you built, a look at your Top 10 HTTP requests [Packetbeat] ECS panel. In this example, this folder was requested 15,987 times. The file connect_to_corp_server was requested 3 times.
 
-**HTTP Brute Force Attack**: Searching for url.path: /company_folders/secret_folder/ shows conversations involving the sensitive data. Specifically, the results contain requests from the brute-forcing toolHydra, identified under the user_agent.original section:
+**SCREENSHOT**
+
+**HTTP Brute Force Attack**: Searching for url.path: /company_folders/secret_folder/ shows conversations involving the sensitive data. Specifically, the results contain requests from the brute-forcing tool Hydra, identified under the user_agent.original section:
+
+**SCREENSHOT**
 
 In addition, the logs contain evidence of a large number of requests for the sensitive data, of which only 3 were successful. This is a telltale signature of a brute-force attack. 
 
@@ -93,85 +99,6 @@ WebDAV Connection & Upload of shell.php: The logs also indicate that an unauthor
 
 
 
-
-
-## Part 2: Incident Analysis with Kibana
-
-Which files were requested? What information did they contain?
-
-  - The file within the secrets-folder is **connect_to_corp_server**.  
-  - This file has ryan’s hashed password as well as other information.
-
-What kind of alarm would you set to detect this behavior in the future?
-
-  - Set an alarm if the folder is accessed
-
-Identify at least one way to harden the vulnerable machine that would mitigate this attack.
-
-  - This directory and file should be removed from the server all together.
-
-Identify the brute force attack.
-
-
-After identifying the hidden directory, you used Hydra to brute-force the target server. Answer the following questions:
-Can you identify packets specifically from Hydra?
-
-  - User_agent.original = Mozilla/4.0 (Hydra)
-
-How many requests were made in the brute-force attack?
-
-  - 15,987 HTTP requests
-
-How many requests had the attacker made before discovering the correct password in this one?
-
-  - 469
-
-What kind of alarm would you set to detect this behavior in the future and at what threshold(s)?
-
-  - Set an alarm based on the threshold for the number of HTTP requests
-
-  - Set an alert when the user_agent.original includes Hydra
-
-Identify at least one way to harden the vulnerable machine that would mitigate this attack.
-
-  - After the limit of 10 401 Unauthorized codes have been returned from a server, that server can automatically drop traffic from the offending IP address for a period of 1 hour. 
-  - We could also display a lockout message and lock the page from login for a temporary period of time from that user.
-
-Find the WebDav connection.
-
-
-Use your dashboard to answer the following questions:
-How many requests were made to this directory?
-
-  - 18
-
-Which file(s) were requested?
-
-  - The file that was within 192.168.1.105/webdav/ is shell.php
-
-What kind of alarm would you set to detect such access in the future?
-  - Set an alert anytime this directory is accessed by a machine other than the machine that should have access.
-
-Identify at least one way to harden the vulnerable machine that would mitigate this attack.
-
-  - Connections to this shared folder should not be accessible from the web interface.
-  - Connections to this shared folder could be restricted by machine with a firewall rule.
-
-Identify the reverse shell and meterpreter traffic.
-
-
-To finish off the attack, you uploaded a PHP reverse shell and started a meterpreter shell session. Answer the following questions:
-Can you identify traffic from the meterpreter session?
-
-  - source.ip: 192.168.1.105 and destination.port: 4444
-
-What kinds of alarms would you set to detect this behavior in the future?
-
-  - We can set an alert for any traffic moving over port 4444.
-  - We can set an alert for any .php file that is uploaded to a server.
-
-Identify at least one way to harden the vulnerable machine that would mitigate this attack.
-  - Removing the ability to upload files to this directory over the web interface would take care of this issue.
 
 ## Group
 - [Josh Black](https://github.com/joshblack07)
