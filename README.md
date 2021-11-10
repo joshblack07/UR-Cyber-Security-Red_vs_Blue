@@ -106,11 +106,14 @@ When did the interaction occur?
 
 What responses did the victim send back?
 
-  - HTTP Status Code 401: 15,981
-  - HTTP Status Code 301: 2
-  - HTTP Status Code 200: 952
-  - HTTP Status Code 207: 12
-  - HTTP Status Code 404: 6
+| HTTP Status Code     | Count |
+|----------|------------|
+| 401    |  15,981  |
+| 301    | 2   |
+|200  | 952  |
+| 207    | 12   |
+|404  | 6  |
+
 
 What data is concerning from the Blue Team perspective?
   - 15,987 HTTP requests to http://192.168.1.105/company_folders/secrets_folder
