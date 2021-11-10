@@ -8,7 +8,8 @@ Identify the offensive traffic.
 Identify the traffic between your machine and the web machine:
 
 When did the interaction occur?
-⋅⋅* 11/09/2021  16:00-19:00 PM
+
+  - 11/09/2021  16:00-19:00 PM
 
 What responses did the victim send back?
 
