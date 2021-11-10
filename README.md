@@ -6,7 +6,7 @@ As the Red Team, you will attack a vulnerable VM within your environment, ultima
 
 The following machines live on the network:
 
-| Name     | IP Address |
+| **Name**     | **IP Address** |
 |----------|------------|
 | Kali    |  192.168.1.90  |
 | Target    | 192.168.1.105   |
