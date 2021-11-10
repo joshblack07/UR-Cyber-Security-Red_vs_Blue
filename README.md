@@ -40,35 +40,40 @@ A considerable amount of data is available in the logs. Specifically, evidence o
   - Brute-force attack against the HTTP server
   - POST request corresponding to upload of shell.php
 
-**Unusual Request Volume**: Logs indicate an unusual number of requests and failed responses between the Kali VM and the target. Note that 401, 301, 207, 404 and 200 are the top responses.
+**Unusual Request Volume**: Logs indicate an unusual number of requests and failed responses between the Kali VM and the target. Note that 401, 301, 200, 207, and 404 are the top responses.
+
+| HTTP Status Code     | Count |
+|----------|------------|
+| 401    |  15,981  |
+| 301    | 2   |
+|200  | 952  |
+| 207    | 12   |
+|404  | 6  |
+
+11/09/2021  16:00-19:00 PM
 
 In addition, note the connection spike in the Connections over time [Packetbeat Flows] ECS, as well as the spike in errors in the Errors vs successful transactions [Packetbet] ECS
 
-**Access to Sensitive Data in secret_folder**: On the dashboard you built, a look at your Top 10 HTTP requests [Packetbeat] ECS panel. In this example, this folder was requested 6,197 times. The file connect_to_corp_server was requested 3 times.
+**Access to Sensitive Data in secret_folder**: On the dashboard you built, a look at your Top 10 HTTP requests [Packetbeat] ECS panel. In this example, this folder was requested 15,987 times. The file connect_to_corp_server was requested 3 times.
 
 **HTTP Brute Force Attack**: Searching for url.path: /company_folders/secret_folder/ shows conversations involving the sensitive data. Specifically, the results contain requests from the brute-forcing toolHydra, identified under the user_agent.original section:
 
+In addition, the logs contain evidence of a large number of requests for the sensitive data, of which only 3 were successful. This is a telltale signature of a brute-force attack. 
 
-
-In addition, the logs contain evidence of a large number of requests for the sensitive data, of which only 3 were successful. This is a telltale signature of a brute-force attack. Specifically, the password protected secret_folder was requested 6209 times. However, the file inside that directory was only requested 3 times. So, out of 6209 requests, only 3 were successful.
-
-
-
-
+  - 15,987 HTTP requests to http://192.168.1.105/company_folders/secrets_folder
+  - 2 successful attempts (Code 301)
+  - 11/09/2021  16:00-19:00 PM
+  - Source IP: 192.168.1.1
 
 WebDAV Connection & Upload of shell.php: The logs also indicate that an unauthorized actor was able to access protected data in the webdav directory. The passwd.dav file was requested via GET, and shell.php uploaded via POST.
 
 **Mitigation**: What alarms should you set to detect this behavior next time? What controls should you put in place on the target to prevent the attack from happening?
 
-
 **Solution**: Mitigation steps for each vulnerability above are provided below.
-
 
   * High Volume of Traffic from Single Endpoint
 
     * Rate-limiting traffic from a specific IP address would reduce the web server's susceptibility to DoS conditions, as well as provide a hook against which to trigger alerts against suspiciously suspiciously fast series of requests that may be indicative of scanning.
-
-
 
   * Access to sensitive data in the secret_folder directory
 
@@ -77,13 +82,9 @@ WebDAV Connection & Upload of shell.php: The logs also indicate that an unauthor
     * Third, Filebeat should be configured to monitor access to the secret_folder directory and its contents.
     * Fourth, access to secret_folder should be whitelisted, and access from IPs not on this whitelist, logged.
 
-
-
   * Brute-force attack against the HTTP server
 
     * The fail2ban utility can be enabled to protect against brute force attacks.
-
-
 
   * POST request corresponding to upload of **shell.php**
 
@@ -95,43 +96,6 @@ WebDAV Connection & Upload of shell.php: The logs also indicate that an unauthor
 
 
 ## Part 2: Incident Analysis with Kibana
-
-After creating your dashboard and becoming familiar with the search syntax, use these tools to answer the questions below:
-Identify the offensive traffic.
-
-
-Identify the traffic between your machine and the web machine:
-
-When did the interaction occur?
-
-  - 11/09/2021  16:00-19:00 PM
-
-What responses did the victim send back?
-
-| HTTP Status Code     | Count |
-|----------|------------|
-| 401    |  15,981  |
-| 301    | 2   |
-|200  | 952  |
-| 207    | 12   |
-|404  | 6  |
-
-
-What data is concerning from the Blue Team perspective?
-  - 15,987 HTTP requests to http://192.168.1.105/company_folders/secrets_folder
-  - 2 successful attempts (Code 301)
-  - The data above is concerning because it shows repeated unsuccessful transaction attempts, and a spike in unique flow traffic, indicating a possible Brute Force attack.
-
-Find the request for the hidden directory.
-
-
-In your attack, you found a secret folder. Let's look at that interaction between these two machines.
-
-How many requests were made to this directory? At what time and from which IP address(es)?
-
-  - 15,987 HTTP requests to http://192.168.1.105/company_folders/secrets_folder
-  - 11/09/2021  16:00-19:00 PM
-  - Source IP: 192.168.1.1
 
 Which files were requested? What information did they contain?
 
