@@ -17,6 +17,7 @@ The following machines live on the network:
 | Target    | 192.168.1.105   |
 |ELK | 192.168.1.100   |
 
+**NETWORK DIAGRAM**
 
 # Red Team
 ## What were the three most critical vulnerabilities discovered?
@@ -47,13 +48,13 @@ A considerable amount of data is available in the logs. Specifically, evidence o
 
 **Unusual Request Volume**: Logs indicate an unusual number of requests and failed responses between the Kali VM and the target. Note that 401, 301, 200, 207, and 404 are the top responses.
 
-| HTTP Status Code     | Count |
+| HTTP Status Code | Count |
 |----------|------------|
-| 401    |  15,981  |
-| 301    | 2   |
-|200  | 952  |
-| 207    | 12   |
-|404  | 6  |
+|   401    |   15,981   |
+|   301    |     2      |
+|   200    |    952     |
+|   207    |     12     |
+|   404    |     6      |
 
 Time: 11/09/2021  16:00-19:00 PM
 
