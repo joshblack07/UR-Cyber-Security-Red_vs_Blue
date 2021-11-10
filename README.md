@@ -64,31 +64,31 @@ WebDAV Connection & Upload of shell.php: The logs also indicate that an unauthor
 **Solution**: Mitigation steps for each vulnerability above are provided below.
 
 
-  - High Volume of Traffic from Single Endpoint
+  * High Volume of Traffic from Single Endpoint
 
-  - Rate-limiting traffic from a specific IP address would reduce the web server's susceptibility to DoS conditions, as well as provide a hook against which to trigger alerts against suspiciously suspiciously fast series of requests that may be indicative of scanning.
-
-
-
-  - Access to sensitive data in the secret_folder directory
-
-  - First, the secret_folder directory should be protected with stronger authentication. E.g., it could be moved to a server to which only key-based SSH access from whitelisted IPs is enabled.
-  - Second, the data inside of secret_folder should be encrypted at rest.
-  - Third, Filebeat should be configured to monitor access to the secret_folder directory and its contents.
-  - Fourth, access to secret_folder should be whitelisted, and access from IPs not on this whitelist, logged.
+    * Rate-limiting traffic from a specific IP address would reduce the web server's susceptibility to DoS conditions, as well as provide a hook against which to trigger alerts against suspiciously suspiciously fast series of requests that may be indicative of scanning.
 
 
 
-  - Brute-force attack against the HTTP server
+  * Access to sensitive data in the secret_folder directory
 
-  - The fail2ban utility can be enabled to protect against brute force attacks.
+    * First, the secret_folder directory should be protected with stronger authentication. E.g., it could be moved to a server to which only key-based SSH access from whitelisted IPs is enabled.
+    * Second, the data inside of secret_folder should be encrypted at rest.
+    * Third, Filebeat should be configured to monitor access to the secret_folder directory and its contents.
+    * Fourth, access to secret_folder should be whitelisted, and access from IPs not on this whitelist, logged.
 
 
 
-  - POST request corresponding to upload of **shell.php**
+  * Brute-force attack against the HTTP server
 
-  - File uploads should require authentication.
-  - In addition, the server should implement an upload filter and forbid users from uploading files that may contain executable code.
+    * The fail2ban utility can be enabled to protect against brute force attacks.
+
+
+
+  * POST request corresponding to upload of **shell.php**
+
+    * File uploads should require authentication.
+    * In addition, the server should implement an upload filter and forbid users from uploading files that may contain executable code.
 
 
 
