@@ -5,11 +5,12 @@ As the Red Team, you will attack a vulnerable VM within your environment, ultima
 
 The following machines live on the network:
 
-  - Kali: 192.168.1.90
+| Name     | IP Address |
+|----------|------------|
+| Kali    |  192.168.1.90  |
+| Target    | 192.168.1.105   |
+|ELK | Server   | 192.168.1.100   |
 
-  - ELK: 192.168.1.100
-
-  - Target: 192.168.1.105
 
 # Red Team: What were the three most critical vulnerabilities discovered?
 
