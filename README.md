@@ -203,5 +203,7 @@ What kinds of alarms would you set to detect this behavior in the future?
 Identify at least one way to harden the vulnerable machine that would mitigate this attack.
   - Removing the ability to upload files to this directory over the web interface would take care of this issue.
 
-## Part Three: Reporting
-
+## Group
+- [Josh Black](https://github.com/joshblack07)
+- [Laura Pratt](https://github.com/laurapratt87)
+- [Courtney Templeton](https://github.com/cltempleton1127)
