@@ -5,6 +5,8 @@
   - I used the logs to extract hard data and visualizations for the report. 
   - Then, I will interpreted log data to suggest mitigation measures for each exploit.
 
+**Here** is a PowerPoint Presentation of the Capstone.
+
 # Network Topology
 
 The following machines live on the network:
