@@ -3,7 +3,7 @@
   - As the Red Team, I attacked a vulnerable VM, ultimately gaining root access to the machine. 
   - As the Blue Team, I used Kibana to review logs taken during the Red Team Engagement. 
   - I used the logs to extract hard data and visualizations for the report. 
-  - Then, I will interpreted log data to suggest mitigation measures for each exploit.
+  - Then, I interpreted log data to suggest mitigation measures for each exploit.
 
 **Here** is a PowerPoint Presentation of the Capstone.
 
@@ -103,8 +103,12 @@ WebDAV Connection & Upload of shell.php: The logs also indicate that an unauthor
     * File uploads should require authentication.
     * In addition, the server should implement an upload filter and forbid users from uploading files that may contain executable code.
 
+# Conclusion
 
-
+  - As the Red Team, I attacked a vulnerable VM, ultimately gaining root access to the machine. 
+  - As the Blue Team, I used Kibana to review logs taken during the Red Team Engagement. 
+  - I used the logs to extract hard data and visualizations for the report. 
+  - Then, I interpreted log data to suggest mitigation measures for each exploit.
 
 ## Group
 - [Josh Black](https://github.com/joshblack07)
