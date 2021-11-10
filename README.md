@@ -13,7 +13,8 @@ The following machines live on the network:
 |ELK | 192.168.1.100   |
 
 
-# Red Team: What were the three most critical vulnerabilities discovered?
+# Red Team
+## What were the three most critical vulnerabilities discovered?
 
 While the web server suffers from several vulnerabilities, the three below are the most critical:
 
@@ -29,7 +30,8 @@ Additional severe vulnerabilities include:
   - No authentication for sensitive data, e.g., secret_folder
   - Plaintext protocols (HTTP and WebDAV)
 
-# Blue Team: What evidence did you find in the logs of the attack? What data should you be monitoring to detect these attacks in the future?
+# Blue Team
+## What evidence did you find in the logs of the attack? What data should you be monitoring to detect these attacks in the future?
 
 A considerable amount of data is available in the logs. Specifically, evidence of the following was obtained upon inspection:
 
