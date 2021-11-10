@@ -8,12 +8,14 @@ Identify the offensive traffic.
 Identify the traffic between your machine and the web machine:
 When did the interaction occur?
 11/09/2021  16:00-19:00 PM
+
 What responses did the victim send back?
-HTTP Status Code 401: 15,981
-HTTP Status Code 301: 2
-HTTP Status Code 200: 952
-HTTP Status Code 207: 12
-HTTP Status Code 404: 6
+-HTTP Status Code 401: 15,981
+-HTTP Status Code 301: 2
+-HTTP Status Code 200: 952
+-HTTP Status Code 207: 12
+-HTTP Status Code 404: 6
+
 What data is concerning from the Blue Team perspective?
 15,987 HTTP requests to http://192.168.1.105/company_folders/secrets_folder
 2 successful attempts (Code 301)
