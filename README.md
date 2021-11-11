@@ -60,6 +60,8 @@ Time: 11/09/2021  16:00-19:00 PM
 
 In addition, note the connection spike in the Connections over time [Packetbeat Flows] ECS, as well as the spike in errors in the Errors vs successful transactions [Packetbet] ECS
 
+![alt text](https://github.com/joshblack07/UR-Cyber-Security-Red_vs_Blue/blob/main/Supplemental%20Resources/connections%20over%20time%20packetbeat%20flows%20ecs%20today.PNG "connection_spike")
+
 **SCREENSHOT**
 
 **Access to Sensitive Data in secret_folder**: On the dashboard you built, a look at your Top 10 HTTP requests [Packetbeat] ECS panel. In this example, this folder was requested 15,987 times. The file connect_to_corp_server was requested 3 times.
