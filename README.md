@@ -5,7 +5,8 @@
   - I used the logs to extract hard data and visualizations for the report. 
   - Then, I interpreted log data to suggest mitigation measures for each exploit.
 
-**Here** is a PowerPoint Presentation of the Capstone.
+[Here](https://github.com/joshblack07/UR-Cyber-Security-Red_vs_Blue/blob/main/Supplemental%20Resources/Capstone%20Engagement%202.pptx "Capstone_PowerPoint") is a PowerPoint Presentation of the Capstone.
+
 
 # Network Topology
 
@@ -62,22 +63,24 @@ In addition, note the connection spike in the Connections over time [Packetbeat 
 
 ![alt text](https://github.com/joshblack07/UR-Cyber-Security-Red_vs_Blue/blob/main/Supplemental%20Resources/connections%20over%20time%20packetbeat%20flows%20ecs%20today.PNG "connection_spike")
 
-**SCREENSHOT**
+![alt text](https://github.com/joshblack07/UR-Cyber-Security-Red_vs_Blue/blob/main/Supplemental%20Resources/errors%20vs%20successful%20transactions%20packetbeat%20ecs%20today.PNG "errors")
 
-**Access to Sensitive Data in secret_folder**: On the dashboard you built, a look at your Top 10 HTTP requests [Packetbeat] ECS panel. In this example, this folder was requested 15,987 times. The file connect_to_corp_server was requested 3 times.
+**Access to Sensitive Data in secret_folder**: On the dashboard you built, a look at your Top 10 HTTP requests [Packetbeat] ECS panel. In this example, this folder was requested 15,987 times.
 
-**SCREENSHOT**
+![alt text](https://github.com/joshblack07/UR-Cyber-Security-Red_vs_Blue/blob/main/Supplemental%20Resources/dashboard%20w%20shell.PNG "HTTP_Requests")
 
 **HTTP Brute Force Attack**: Searching for url.path: /company_folders/secret_folder/ shows conversations involving the sensitive data. Specifically, the results contain requests from the brute-forcing tool Hydra, identified under the user_agent.original section:
 
-**SCREENSHOT**
+![alt text](https://github.com/joshblack07/UR-Cyber-Security-Red_vs_Blue/blob/main/Supplemental%20Resources/hydra%20total.PNG "Hydra")
 
-In addition, the logs contain evidence of a large number of requests for the sensitive data, of which only 3 were successful. This is a telltale signature of a brute-force attack. 
+In addition, the logs contain evidence of a large number of requests for the sensitive data, of which only 2 were successful. This is a telltale signature of a brute-force attack. 
 
   - 15,987 HTTP requests to http://192.168.1.105/company_folders/secrets_folder
   - 2 successful attempts (Code 301)
   - 11/09/2021  16:00-19:00 PM
   - Source IP: 192.168.1.1
+
+![alt text](https://github.com/joshblack07/UR-Cyber-Security-Red_vs_Blue/blob/main/Supplemental%20Resources/what%20data%20is%20concerning.PNG "HTTP_Requests")
 
 WebDAV Connection & Upload of shell.php: The logs also indicate that an unauthorized actor was able to access protected data in the webdav directory. The passwd.dav file was requested via GET, and shell.php uploaded via POST.
 
