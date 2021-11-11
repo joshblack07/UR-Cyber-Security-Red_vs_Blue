@@ -18,7 +18,8 @@ The following machines live on the network:
 | Target    | 192.168.1.105   |
 |ELK | 192.168.1.100   |
 
-**NETWORK DIAGRAM**
+![alt text](https://github.com/joshblack07/UR-Cyber-Security-Red_vs_Blue/blob/main/Supplemental%20Resources/Capstone_2_Network_Diagram.jpg "Network Diagram")
+
 
 # Red Team
 ## What were the three most critical vulnerabilities discovered?
