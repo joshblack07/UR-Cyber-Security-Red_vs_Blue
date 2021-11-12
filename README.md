@@ -153,10 +153,10 @@ WebDAV Connection & Upload of shell.php: The logs also indicate that an unauthor
 
 | **Red Team**     | **Blue Team** |
 |----------|------------|
-| Accessed the system via HTTP Port 80   |  Confirmed that a port scan occurred  |
+| Accessed the system via HTTP Port 80 CVE-2019-6579   |  Confirmed that a port scan occurred  |
 | Found Root accessibility  | Found requests for a hidden directory   |
 |Found the occurrence of simplistic usernames and weak passwords | Found evidence of a brute force attack |
-|Brute forced passwords to gain system access | Found requests to access critical system folders and files |
+|Brute forced passwords to gain system access CVE-2019-3746 | Found requests to access critical system folders and files |
 |Cracked a hashed password to gain system access and use a shell script | Identified a WebDAV vulnerability |
 |Identified Directory Indexing Vulnerability CWE-548| Recommended alarms   |
 |   |  Recommended system hardening |
