@@ -126,7 +126,7 @@ WebDAV Connection & Upload of shell.php: The logs also indicate that an unauthor
     * File uploads should require authentication.
     * In addition, the server should implement an upload filter and forbid users from uploading files that may contain executable code.
 
-# Assessment Summary
+## Assessment Summary
 
 | **Red Team**     | **Blue Team** |
 |----------|------------|
