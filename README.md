@@ -5,8 +5,7 @@
   - I used the logs to extract hard data and visualizations for the report. 
   - Then, I interpreted log data to suggest mitigation measures for each exploit.
 
-[Here](https://docs.google.com/presentation/d/1XtU9RuZ9AscCjzbvKeTO2nQrNnP6-FL9LeRwd4JRhbg/edit?usp=sharing "Capstone_PowerPoint") is a PowerPoint Presentation of the Capstone.
-
+Here is the [PowerPoint Presentation](https://docs.google.com/presentation/d/1XtU9RuZ9AscCjzbvKeTO2nQrNnP6-FL9LeRwd4JRhbg/edit?usp=sharing "Capstone_PowerPoint") of the Capstone.
 
 # Network Topology
 
@@ -21,12 +20,10 @@ The following machines live on the network:
 
 ![alt text](https://github.com/joshblack07/UR-Cyber-Security-Red_vs_Blue/blob/main/Supplemental%20Resources/Red_V_Blue_Network_Diagram.jpg "Network Diagram")
 
-
 # Red Team
 ## What were the three most critical vulnerabilities discovered?
 
 While the web server suffers from several vulnerabilities, the three below are the most critical:
-
 
 | **Vulnerability**     | **Description** | **Impact** |
 |----------|------------|------------|
@@ -35,7 +32,6 @@ While the web server suffers from several vulnerabilities, the three below are t
 |Remote Code Execution via Command Injection OWASP Top 10 #1 Critical | Attackers can use PHP scripts to execute arbitrary shell commands. | Vulnerability allows attackers to open a reverse shell to the server.|
 
 Additional vulnerabilities include:
-
 
 | **Vulnerability**     | **Description** | **Impact** |
 |----------|------------|------------|
@@ -76,7 +72,6 @@ Additional vulnerabilities include:
       - Running arbitrary shell commands allows Meterpreter to open a [full-fledged connection](https://github.com/joshblack07/UR-Cyber-Security-Red_vs_Blue/blob/main/Supplemental%20Resources/Day%201/msfconsole2.PNG) to the target
 
 # Blue Team
-## What evidence did you find in the logs of the attack? What data should you be monitoring to detect these attacks in the future?
 
 A considerable amount of data is available in the logs. Specifically, evidence of the following was obtained upon inspection:
 
@@ -97,7 +92,7 @@ A considerable amount of data is available in the logs. Specifically, evidence o
 
 Time: 11/09/2021  16:00-19:00 PM
 
-In addition, note the connection spike in the Connections over time [Packetbeat Flows] ECS, as well as the spike in errors in the Errors vs successful transactions [Packetbet] ECS
+In addition, note the connection spike in the Connections over time [Packetbeat Flows] ECS, as well as the spike in errors in the Errors vs successful transactions [Packetbeat] ECS
 
 ![alt text](https://github.com/joshblack07/UR-Cyber-Security-Red_vs_Blue/blob/main/Supplemental%20Resources/connections%20over%20time%20packetbeat%20flows%20ecs%20today.PNG "connection_spike")
 
