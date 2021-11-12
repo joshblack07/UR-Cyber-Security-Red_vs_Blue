@@ -145,7 +145,7 @@ WebDAV Connection & Upload of shell.php: The logs also indicate that an unauthor
 
   * Brute-force attack against the HTTP server
 
-    * The fail2ban utility can be enabled to protect against brute force attacks.
+    * The [fail2ban utility](https://www.fail2ban.org/wiki/index.php/Main_Page) can be enabled to protect against brute force attacks.
     * Create a policy that locks out accounts after 10 failed attempts
     * Create a policy that increases password complexity (requirements)
     * Enable MFA
