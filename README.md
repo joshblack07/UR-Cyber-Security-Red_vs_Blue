@@ -50,10 +50,26 @@ Additional vulnerabilities include:
 ## Exploits
 
   - Explotation: Sensitive Data Exposure
-  - Tools & Processes
-    - 'nmap' to scan network
-    - 'dirb' to map URLs
-    - Browser to explore
+    - Tools & Processes
+      - `nmap` to scan network
+      - `dirb` to map URLs
+      - Browser to explore
+
+![alt text](https://github.com/joshblack07/UR-Cyber-Security-Red_vs_Blue/blob/main/Supplemental%20Resources/Day%201/nmap%20scan1.PNG "nmap")
+
+  - Explotation: Sensitive Data Exposure
+    - Achievements
+      - The exploit revealed a `secret_folder` directory
+      - This directory is password protected, but susceptible to **brute-force**
+
+![alt text](https://github.com/joshblack07/UR-Cyber-Security-Red_vs_Blue/blob/main/Supplemental%20Resources/Day%201/secret%20folder%20auth.PNG "secret_folder")
+
+  - Explotation: Sensitive Data Exposure
+    - Exploitation
+      - The login prompt reveals that the user is `ashton` 
+      - This information is used to run a brute force attack and steal the data
+
+![alt text](https://github.com/joshblack07/UR-Cyber-Security-Red_vs_Blue/blob/main/Supplemental%20Resources/hydra%20crack2.PNG "hydra_crack")
 
 
 # Blue Team
