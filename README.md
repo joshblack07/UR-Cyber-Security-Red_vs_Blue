@@ -88,7 +88,7 @@ In addition, the logs contain evidence of a large number of requests for the sen
   - 15,987 HTTP requests to http://192.168.1.105/company_folders/secrets_folder
   - 2 successful attempts (Code 301)
   - 11/09/2021  16:00-19:00 PM
-  - Source IP: 192.168.1.1
+  - Source IP: 192.168.1.105
 
 ![alt text](https://github.com/joshblack07/UR-Cyber-Security-Red_vs_Blue/blob/main/Supplemental%20Resources/what%20data%20is%20concerning.PNG "HTTP_Requests")
 
