@@ -97,20 +97,31 @@ WebDAV Connection & Upload of shell.php: The logs also indicate that an unauthor
 
 **Solution**: Mitigation steps for each vulnerability above are provided below.
 
+  * Blocking the Port Scan
+
+    * The local firewall can be used to throttle incoming connections
+    * Firewall should be regularly patched to minimise new attacks
+    * ICMP traffic can be filtered
+    * An IP allowed list can be enabled
+    * Regularly run port scans to detect and audit any open ports
+
   * High Volume of Traffic from Single Endpoint
 
     * Rate-limiting traffic from a specific IP address would reduce the web server's susceptibility to DoS conditions, as well as provide a hook against which to trigger alerts against suspiciously suspiciously fast series of requests that may be indicative of scanning.
 
   * Access to sensitive data in the secret_folder directory
 
-    * First, the secret_folder directory should be protected with stronger authentication. E.g., it could be moved to a server to which only key-based SSH access from whitelisted IPs is enabled.
-    * Second, the data inside of secret_folder should be encrypted at rest.
-    * Third, Filebeat should be configured to monitor access to the secret_folder directory and its contents.
-    * Fourth, access to secret_folder should be whitelisted, and access from IPs not on this whitelist, logged.
+    * The secret_folder directory should be protected with stronger authentication. 
+    * Data inside of secret_folder should be encrypted at rest.
+    * Filebeat should be configured to monitor access to the secret_folder directory and its contents.
+    * Access to secret_folder should be whitelisted, and access from IPs not on this whitelist, logged.
 
   * Brute-force attack against the HTTP server
 
     * The fail2ban utility can be enabled to protect against brute force attacks.
+    * Create a policy that locks out accounts after 10 failed attempts
+    * Create a policy that increases password complexity (requirements)
+    * Enable MFA
 
   * POST request corresponding to upload of **shell.php**
 
