@@ -1,9 +1,9 @@
 # University of Richmond Cybersecurity Capstone #2
 
-  - As the Red Team, I attacked a vulnerable VM, ultimately gaining root access to the machine. 
+  - As the Red Team, I attacked a VM, discovering several critical vulnerabilities. 
   - As the Blue Team, I used Kibana to review logs taken during the Red Team Engagement. 
-  - I used the logs to extract hard data and visualizations for the report. 
-  - Then, I interpreted log data to suggest mitigation measures for each exploit.
+    - I used the logs to extract hard data and visualizations for the report. 
+    - Then, I interpreted log data to suggest mitigation measures for each exploit.
 
 Here is the [PowerPoint Presentation](https://docs.google.com/presentation/d/1XtU9RuZ9AscCjzbvKeTO2nQrNnP6-FL9LeRwd4JRhbg/edit?usp=sharing "Capstone_PowerPoint") of the Capstone.
 
