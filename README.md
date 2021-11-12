@@ -117,6 +117,8 @@ WebDAV Connection & Upload of shell.php: The logs also indicate that an unauthor
   - Then, I interpreted log data to suggest mitigation measures for each exploit.
 
 ## Group
+- Julian Baker
+- Robbie Drescher
 - [Josh Black](https://github.com/joshblack07)
 - [Laura Pratt](https://github.com/laurapratt87)
 - [Courtney Templeton](https://github.com/cltempleton1127)
