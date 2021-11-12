@@ -17,6 +17,7 @@ The following machines live on the network:
 | Kali    |  192.168.1.90  |
 | Target    | 192.168.1.105   |
 |ELK | 192.168.1.100   |
+|Azure Hyper-V ML-RefVm-684427 | 192.168.1.1   |
 
 ![alt text](https://github.com/joshblack07/UR-Cyber-Security-Red_vs_Blue/blob/main/Supplemental%20Resources/Network_Diagram.jpg "Network Diagram")
 
@@ -26,17 +27,24 @@ The following machines live on the network:
 
 While the web server suffers from several vulnerabilities, the three below are the most critical:
 
-  - **Sensitive Data Exposure**: Exposure of the secret_folder directory and the connect_to_corp_server file compromised the credentials of the Web DAV folder. Sensitive Data Exposure (SDE) is an OWASP Top 10 vulnerability.
 
-  - **Unauthorized File Upload**: The web server allows users to upload arbitrary files — specifically, PHP scripts. This exposes the machine to the wide array of attacks enabled by malicious files.
+| **Vulnerability**     | **Description** | **Impact |
+|----------|------------|------------|
+| Sensitive Data Exposure OWASP Top 10 #3 Critical | The secret_folder is publicly accessible, but contains sensitive data intended only for authorized personnel. |The exposure compromises credentials that attackers can use to break into the web server.  |
+| Unauthorized File Upload Critical  | Users are allowed to upload arbitrary files to the web server.   | This vulnerability allows attackers to upload PHP scripts to the server.  |
+|Remote Code Execution via Command Injection OWASP Top 10 #1 Critical | Attackers can use PHP scripts to execute arbitrary shell commands. | Vulnerability allows attackers to open a reverse shell to the server.|
 
-  - **Remote Code Execution**: As a consequence of the unauthorized file upload vulnerability, attackers can upload web shells and achieve arbitrary remote code execution on the web server.
+Additional vulnerabilities include:
 
-Additional severe vulnerabilities include:
-
-  - Lack of mitigation against brute force attacks
-  - No authentication for sensitive data, e.g., secret_folder
-  - Plaintext protocols (HTTP and WebDAV)
+| **Vulnerability**     | **Description** | **Impact |
+|----------|------------|------------|
+| Directory Indexing Vulnerability (CWE-548) |  Attacker can view and download content of a directory located on a vulnerable device. CWE-548 refers to an informational leak through directory listing.  | The attacker can gain access to source code, or devise other exploits. The directory listing can compromise private or confidential data.  |
+| Hashed Passwords  | If a password is not salted it can be cracked via online tools such as www.crackstation.net/ or programs such as hashcat.  | Once the password is cracked, and if a username is already known, a hacker can access system files.  |
+|Weak usernames and passwords | Commonly used passwords such as simple words, and the lack of password complexity, such as the inclusion of symbols, numbers and capitals.  | System access could be discovered by social engineering. https://thycotic.com/resources/password-strength-checker/ suggests that ‘Leopoldo’ could be cracked in 21 seconds by a computer. |
+|Port 80 Open with Public Access (CVE-2019-6579) | 192.168.1.1   | Open and unsecured access to anyone attempting entry using Port 80.  | Files and Folders are readily accessible. Sensitive (and secret) files and folders can be found. |
+| Ability to discover passwords by Brute Force (CVE-2019-3746) |  When an attacker uses numerous username and password combinations to access a device and/or system. | Easy system access by use of brute force with common password lists such as rockyou.txt by programs such as Hydra  |
+| No authentication for sensitive data, e.g., secret_folder | 192.168.1.105   |   |
+|Plaintext protocols (HTTP and WebDAV) | 192.168.1.100   |
 
 # Blue Team
 ## What evidence did you find in the logs of the attack? What data should you be monitoring to detect these attacks in the future?
