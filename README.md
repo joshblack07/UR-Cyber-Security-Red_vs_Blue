@@ -127,7 +127,7 @@ WebDAV Connection & Upload of shell.php: The logs also indicate that an unauthor
 |Brute forced passwords to gain system access | Found requests to access critical system folders and files |
 |Cracked a hashed password to gain system access and use a shell script | Identified a WebDAV vulnerability |
 |Identified Directory Indexing Vulnerability CWE-548| Recommended alarms   |
-|   | Recommended alarms   |  Recommended system hardening |
+|   |  |  Recommended system hardening |
 
 
 ## Group
