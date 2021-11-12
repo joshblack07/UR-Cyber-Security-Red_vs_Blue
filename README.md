@@ -117,12 +117,18 @@ WebDAV Connection & Upload of shell.php: The logs also indicate that an unauthor
     * File uploads should require authentication.
     * In addition, the server should implement an upload filter and forbid users from uploading files that may contain executable code.
 
-# Conclusion
+# Assessment Summary
 
-  - As the Red Team, I attacked a vulnerable VM, ultimately gaining root access to the machine. 
-  - As the Blue Team, I used Kibana to review logs taken during the Red Team Engagement. 
-  - I used the logs to extract hard data and visualizations for the report. 
-  - Then, I interpreted log data to suggest mitigation measures for each exploit.
+| **Red Team**     | **Blue Team** |
+|----------|------------|
+| Accessed the system via HTTP Port 80   |  Confirmed that a port scan occurred  |
+| Found Root accessibility  | Found requests for a hidden directory   |
+|Found the occurrence of simplistic usernames and weak passwords | Found evidence of a brute force attack |
+|Brute forced passwords to gain system access | Found requests to access critical system folders and files |
+|Cracked a hashed password to gain system access and use a shell script | Identified a WebDAV vulnerability |
+|Identified Directory Indexing Vulnerability CWE-548| Recommended alarms   |
+|   | Recommended alarms   |  Recommended system hardening |
+
 
 ## Group
 - Julian Baker
