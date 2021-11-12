@@ -51,26 +51,29 @@ Additional vulnerabilities include:
 
   - Explotation: Sensitive Data Exposure
     - Tools & Processes
-      - `nmap` to scan network
+      - `nmap` to [scan network](https://github.com/joshblack07/UR-Cyber-Security-Red_vs_Blue/blob/main/Supplemental%20Resources/Day%201/nmap%20scan1.PNG "nmap")
       - `dirb` to map URLs
       - Browser to explore
 
-![alt text](https://github.com/joshblack07/UR-Cyber-Security-Red_vs_Blue/blob/main/Supplemental%20Resources/Day%201/nmap%20scan1.PNG "nmap")
-
-  - Explotation: Sensitive Data Exposure
     - Achievements
       - The exploit revealed a `secret_folder` directory
-      - This directory is password protected, but susceptible to **brute-force**
+      - This directory is [password protected](https://github.com/joshblack07/UR-Cyber-Security-Red_vs_Blue/blob/main/Supplemental%20Resources/Day%201/secret%20folder%20auth.PNG "secret_folder"), but susceptible to **brute-force**
 
-![alt text](https://github.com/joshblack07/UR-Cyber-Security-Red_vs_Blue/blob/main/Supplemental%20Resources/Day%201/secret%20folder%20auth.PNG "secret_folder")
-
-  - Explotation: Sensitive Data Exposure
     - Exploitation
       - The login prompt reveals that the user is `ashton` 
-      - This information is used to run a brute force attack and steal the data
+      - This information is used to run a [brute force attack](https://github.com/joshblack07/UR-Cyber-Security-Red_vs_Blue/blob/main/Supplemental%20Resources/hydra%20crack2.PNG "hydra_crack") and [steal the data](https://github.com/joshblack07/UR-Cyber-Security-Red_vs_Blue/blob/main/Supplemental%20Resources/Day%201/secret%20folder%20corp%20server.PNG)
 
-![alt text](https://github.com/joshblack07/UR-Cyber-Security-Red_vs_Blue/blob/main/Supplemental%20Resources/hydra%20crack2.PNG "hydra_crack")
+  - Explotation: Sensitive Data Exposure
+    - Tools & Processes
+      - [Crack stolen credentials](https://github.com/joshblack07/UR-Cyber-Security-Red_vs_Blue/blob/main/Supplemental%20Resources/Day%201/hash_crack.PNG) to connect via WebDAV
+      - Generate custom web shell with [msfconsole](https://github.com/joshblack07/UR-Cyber-Security-Red_vs_Blue/blob/main/Supplemental%20Resources/Day%201/msfconsole2.PNG)
+      - [Upload shell](https://github.com/joshblack07/UR-Cyber-Security-Red_vs_Blue/blob/main/Supplemental%20Resources/Day%201/move%20shell.PNG) via WebDAV 
 
+    - Achievements
+      - Uploading a web shell allows us to execute arbitrary shell commands on the target
+
+    - Aftermath
+      - Running arbitrary shell commands allows Meterpreter to open a [full-fledged connection](https://github.com/joshblack07/UR-Cyber-Security-Red_vs_Blue/blob/main/Supplemental%20Resources/Day%201/msfconsole2.PNG) to the target
 
 # Blue Team
 ## What evidence did you find in the logs of the attack? What data should you be monitoring to detect these attacks in the future?
