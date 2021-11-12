@@ -93,9 +93,7 @@ In addition, the logs contain evidence of a large number of requests for the sen
 
 WebDAV Connection & Upload of shell.php: The logs also indicate that an unauthorized actor was able to access protected data in the webdav directory. The passwd.dav file was requested via GET, and shell.php uploaded via POST.
 
-**Mitigation**: What alarms should you set to detect this behavior next time? What controls should you put in place on the target to prevent the attack from happening?
-
-**Solution**: Mitigation steps for each vulnerability above are provided below.
+## Mitigation steps for each vulnerability above are provided below.
 
   * Blocking the Port Scan
 
