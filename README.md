@@ -28,7 +28,7 @@ The following machines live on the network:
 While the web server suffers from several vulnerabilities, the three below are the most critical:
 
 
-| **Vulnerability**     | **Description** | **Impact |
+| **Vulnerability**     | **Description** | **Impact** |
 |----------|------------|------------|
 | Sensitive Data Exposure OWASP Top 10 #3 Critical | The secret_folder is publicly accessible, but contains sensitive data intended only for authorized personnel. |The exposure compromises credentials that attackers can use to break into the web server.  |
 | Unauthorized File Upload Critical  | Users are allowed to upload arbitrary files to the web server.   | This vulnerability allows attackers to upload PHP scripts to the server.  |
@@ -36,7 +36,7 @@ While the web server suffers from several vulnerabilities, the three below are t
 
 Additional vulnerabilities include:
 
-| **Vulnerability**     | **Description** | **Impact |
+| **Vulnerability**     | **Description** | **Impact** |
 |----------|------------|------------|
 | Directory Indexing Vulnerability (CWE-548) |  Attacker can view and download content of a directory located on a vulnerable device. CWE-548 refers to an informational leak through directory listing.  | The attacker can gain access to source code, or devise other exploits. The directory listing can compromise private or confidential data.  |
 | Hashed Passwords  | If a password is not salted it can be cracked via online tools such as www.crackstation.net/ or programs such as hashcat.  | Once the password is cracked, and if a username is already known, a hacker can access system files.  |
