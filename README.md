@@ -36,13 +36,14 @@ While the web server suffers from several vulnerabilities, the three below are t
 
 Additional vulnerabilities include:
 
+
 | **Vulnerability**     | **Description** | **Impact** |
 |----------|------------|------------|
-| Directory Indexing Vulnerability (CWE-548) |  Attacker can view and download content of a directory located on a vulnerable device. CWE-548 refers to an informational leak through directory listing.  | The attacker can gain access to source code, or devise other exploits. The directory listing can compromise private or confidential data.  |
+| Directory Indexing Vulnerability [CWE-548](https://cwe.mitre.org/data/definitions/548.html "CWE-548") |  Attacker can view and download content of a directory located on a vulnerable device. CWE-548 refers to an informational leak through directory listing.  | The attacker can gain access to source code, or devise other exploits. The directory listing can compromise private or confidential data.  |
 | Hashed Passwords  | If a password is not salted it can be cracked via online tools such as www.crackstation.net/ or programs such as hashcat.  | Once the password is cracked, and if a username is already known, a hacker can access system files.  |
 |Weak usernames and passwords | Commonly used passwords such as simple words, and the lack of password complexity, such as the inclusion of symbols, numbers and capitals.  | System access could be discovered by social engineering. https://thycotic.com/resources/password-strength-checker/ suggests that ‘Leopoldo’ could be cracked in 21 seconds by a computer. |
-|Port 80 Open with Public Access (CVE-2019-6579) | 192.168.1.1   | Open and unsecured access to anyone attempting entry using Port 80.  | Files and Folders are readily accessible. Sensitive (and secret) files and folders can be found. |
-| Ability to discover passwords by Brute Force (CVE-2019-3746) |  When an attacker uses numerous username and password combinations to access a device and/or system. | Easy system access by use of brute force with common password lists such as rockyou.txt by programs such as Hydra  |
+|Port 80 Open with Public Access [CVE-2019-6579](https://nvd.nist.gov/vuln/detail/CVE-2019-6579 "CVE-2019-6579") | Open and unsecured access to anyone attempting entry using Port 80.  | Files and Folders are readily accessible. Sensitive (and secret) files and folders can be found. |
+| Ability to discover passwords by Brute Force [CVE-2019-3746](https://nvd.nist.gov/vuln/detail/CVE-2019-3746 "CVE-2019-3746") |  When an attacker uses numerous username and password combinations to access a device and/or system. | Easy system access by use of brute force with common password lists such as rockyou.txt by programs such as Hydra  |
 | No authentication for sensitive data, e.g., secret_folder |    |   |
 |Plaintext protocols (HTTP and WebDAV) |   |
 
