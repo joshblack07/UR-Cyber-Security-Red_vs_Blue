@@ -21,7 +21,6 @@ The following machines live on the network:
 ![alt text](https://github.com/joshblack07/UR-Cyber-Security-Red_vs_Blue/blob/main/Supplemental%20Resources/Red_V_Blue_Network_Diagram.jpg "Network Diagram")
 
 # Red Team
-## What were the three most critical vulnerabilities discovered?
 
 While the web server suffers from several vulnerabilities, the three below are the most critical:
 
