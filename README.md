@@ -43,8 +43,8 @@ Additional vulnerabilities include:
 |Weak usernames and passwords | Commonly used passwords such as simple words, and the lack of password complexity, such as the inclusion of symbols, numbers and capitals.  | System access could be discovered by social engineering. https://thycotic.com/resources/password-strength-checker/ suggests that ‘Leopoldo’ could be cracked in 21 seconds by a computer. |
 |Port 80 Open with Public Access (CVE-2019-6579) | 192.168.1.1   | Open and unsecured access to anyone attempting entry using Port 80.  | Files and Folders are readily accessible. Sensitive (and secret) files and folders can be found. |
 | Ability to discover passwords by Brute Force (CVE-2019-3746) |  When an attacker uses numerous username and password combinations to access a device and/or system. | Easy system access by use of brute force with common password lists such as rockyou.txt by programs such as Hydra  |
-| No authentication for sensitive data, e.g., secret_folder | 192.168.1.105   |   |
-|Plaintext protocols (HTTP and WebDAV) | 192.168.1.100   |
+| No authentication for sensitive data, e.g., secret_folder |    |   |
+|Plaintext protocols (HTTP and WebDAV) |   |
 
 # Blue Team
 ## What evidence did you find in the logs of the attack? What data should you be monitoring to detect these attacks in the future?
