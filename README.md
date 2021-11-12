@@ -24,11 +24,11 @@ The following machines live on the network:
 
 While the web server suffers from several vulnerabilities, the three below are the most critical:
 
-| **Vulnerability**     | **Description** | **Impact** |
-|----------|------------|------------|
-| Sensitive Data Exposure OWASP Top 10 #3 Critical | The secret_folder is publicly accessible, but contains sensitive data intended only for authorized personnel. |The exposure compromises credentials that attackers can use to break into the web server.  |
-| Unauthorized File Upload Critical  | Users are allowed to upload arbitrary files to the web server.   | This vulnerability allows attackers to upload PHP scripts to the server.  |
-|Remote Code Execution via Command Injection OWASP Top 10 #1 Critical | Attackers can use PHP scripts to execute arbitrary shell commands. | Vulnerability allows attackers to open a reverse shell to the server.|
+| | **Vulnerability**     | **Description** | **Impact** |
+|-|----------|------------|------------|
+| 1 | Sensitive Data Exposure OWASP Top 10 #3 Critical | The secret_folder is publicly accessible, but contains sensitive data intended only for authorized personnel. |The exposure compromises credentials that attackers can use to break into the web server.  |
+| 2 | Unauthorized File Upload Critical  | Users are allowed to upload arbitrary files to the web server.   | This vulnerability allows attackers to upload PHP scripts to the server.  |
+| 3 |Remote Code Execution via Command Injection OWASP Top 10 #1 Critical | Attackers can use PHP scripts to execute arbitrary shell commands. | Vulnerability allows attackers to open a reverse shell to the server.|
 
 Additional vulnerabilities include:
 
