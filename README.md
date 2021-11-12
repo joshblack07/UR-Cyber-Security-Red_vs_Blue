@@ -47,6 +47,15 @@ Additional vulnerabilities include:
 | No authentication for sensitive data, e.g., secret_folder |    |   |
 |Plaintext protocols (HTTP and WebDAV) |   |
 
+## Exploits
+
+  - Explotation: Sensitive Data Exposure
+  - Tools & Processes
+    - 'nmap' to scan network
+    - 'dirb' to map URLs
+    - Browser to explore
+
+
 # Blue Team
 ## What evidence did you find in the logs of the attack? What data should you be monitoring to detect these attacks in the future?
 
