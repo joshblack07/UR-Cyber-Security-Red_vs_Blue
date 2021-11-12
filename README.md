@@ -5,7 +5,7 @@
   - I used the logs to extract hard data and visualizations for the report. 
   - Then, I interpreted log data to suggest mitigation measures for each exploit.
 
-[Here](https://github.com/joshblack07/UR-Cyber-Security-Red_vs_Blue/blob/main/Supplemental%20Resources/Capstone%20Engagement%202.pptx "Capstone_PowerPoint") is a PowerPoint Presentation of the Capstone.
+[Here](https://docs.google.com/presentation/d/1XtU9RuZ9AscCjzbvKeTO2nQrNnP6-FL9LeRwd4JRhbg/edit?usp=sharing "Capstone_PowerPoint") is a PowerPoint Presentation of the Capstone.
 
 
 # Network Topology
