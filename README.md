@@ -167,5 +167,6 @@ WebDAV Connection & Upload of shell.php: The logs also indicate that an unauthor
 - [Josh Black](https://github.com/joshblack07)
 - [Laura Pratt](https://github.com/laurapratt87)
 - [Courtney Templeton](https://github.com/cltempleton1127)
+- [Robbie Drescher](https://github.com/RobDresch)
 - Julian Baker
-- Robbie Drescher
+
